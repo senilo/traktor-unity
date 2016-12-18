@@ -2,8 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
-
+using UnityEngine.SceneManagement;
 
 public class TraktorController : MonoBehaviour {
     public List<AxleInfo> axleInfos; // the information about each individual axle
@@ -13,12 +12,14 @@ public class TraktorController : MonoBehaviour {
     public float steeringSpeed1 = 20;
     public float steeringSpeed2 = 50;
     public GameObject tp;
+    public GameObject wagon;
     Rigidbody rb;
     public Text velText;
     public float maxSpeed1 = 30;
     public float maxSpeed2 = 40;
     public float reverseMaxSpeed1 = 10;
     public float reverseMaxSpeed2 = 15;
+
     public AudioSource tut;
     public AudioSource traktor1, traktor2;
 
@@ -44,7 +45,6 @@ public class TraktorController : MonoBehaviour {
         }
 
         Transform visualWheel = collider.transform.GetChild(0);
-
         Vector3 position;
         Quaternion rotation;
         collider.GetWorldPose(out position, out rotation);
@@ -56,7 +56,6 @@ public class TraktorController : MonoBehaviour {
     public void FixedUpdate()
     {
         currentSpeed = Vector3.Dot(rb.velocity, transform.forward) * 3.6f;
-
         float motor = 0;
         float brake = 0;
         if (Input.GetAxis("Vertical") < 0)
@@ -111,10 +110,10 @@ public class TraktorController : MonoBehaviour {
             }
             if (axleInfo.motor)
             {
-
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
+
             axleInfo.leftWheel.brakeTorque = brake;
             axleInfo.rightWheel.brakeTorque = brake;
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
@@ -124,9 +123,15 @@ public class TraktorController : MonoBehaviour {
     public void Update()
     {
         velText.text =(Mathf.Round( (float)(Vector3.Dot(rb.velocity, transform.forward) * 3.6)) ).ToString() + " km/h";
+
+        // C
         if (Input.GetButtonDown("Jump"))
         {
             tut.Play();
+        }
+        if (Input.GetButtonDown("Reset"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (currentSpeed > 1)
@@ -143,7 +148,6 @@ public class TraktorController : MonoBehaviour {
             if (!traktor2.isPlaying)
             {
                 traktor2.Play();
-              
             }
             traktor1.Stop();
         }
@@ -151,10 +155,29 @@ public class TraktorController : MonoBehaviour {
     }
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.ToString());
         if (collision.gameObject.CompareTag("ball"))
         {
-            collision.gameObject.SetActive(false);
+            if (wagon != null) {
+                var w = wagon.GetComponent<WagonController>();
+                w.addBall(collision.gameObject);
+                Debug.Log("collision");
+            }
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        var _other = other.transform.parent;
+        if (_other == null) return;
+
+        Debug.Log(_other.gameObject.tag);
+        if (_other.gameObject.CompareTag("ball"))
+        {
+            if (wagon != null)
+            {
+                var w = wagon.GetComponent<WagonController>();
+                w.addBall(_other.gameObject);
+
+            }
         }
     }
 }
