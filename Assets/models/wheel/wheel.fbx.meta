@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: 2946532e48d285046842874d3f3a7280
+timeCreated: 1486929075
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Empty
+    100004: Lamp
+    100006: Lamp.001
+    100008: Lamp.002
+    100010: Plane
+    100012: Plane.001
+    100014: rim_highpoly
+    100016: rim_lowpoly
+    100018: threads
+    100020: threads.001
+    100022: tire
+    100024: tire.001
+    100026: //RootNode
+    100028: wheel_rim_lowpoly
+    100030: wheel_threads
+    100032: wheel_tire
+    400000: Camera
+    400002: Empty
+    400004: Lamp
+    400006: Lamp.001
+    400008: Lamp.002
+    400010: Plane
+    400012: Plane.001
+    400014: rim_highpoly
+    400016: rim_lowpoly
+    400018: threads
+    400020: threads.001
+    400022: tire
+    400024: tire.001
+    400026: //RootNode
+    400028: wheel_rim_lowpoly
+    400030: wheel_threads
+    400032: wheel_tire
+    2300000: Plane
+    2300002: Plane.001
+    2300004: rim_highpoly
+    2300006: rim_lowpoly
+    2300008: threads
+    2300010: threads.001
+    2300012: tire
+    2300014: tire.001
+    2300016: wheel_rim_lowpoly
+    2300018: wheel_threads
+    2300020: wheel_tire
+    3300000: Plane
+    3300002: Plane.001
+    3300004: rim_highpoly
+    3300006: rim_lowpoly
+    3300008: threads
+    3300010: threads.001
+    3300012: tire
+    3300014: tire.001
+    3300016: wheel_rim_lowpoly
+    3300018: wheel_threads
+    3300020: wheel_tire
+    4300000: Plane.001
+    4300002: Plane
+    4300004: threads.001
+    4300006: tire.001
+    4300008: threads
+    4300010: rim_highpoly
+    4300012: rim_lowpoly
+    4300014: tire
+    4300016: wheel_threads
+    4300018: wheel_tire
+    4300020: wheel_rim_lowpoly
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
